@@ -39,6 +39,13 @@ const Layout = props => {
             >
               Counter
             </NavLink>
+            <NavLink
+              activeClassName='active'
+              className='nav-link'
+              to='/decorator'
+            >
+              Counter+Decorator
+            </NavLink>
           </nav>
         </div>
         <main className='main'>
