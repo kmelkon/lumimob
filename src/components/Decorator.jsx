@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { observable } from 'mobx'
 import { observer } from 'mobx-react'
 import { Button } from '@blueprintjs/core'
+import DevTools from 'mobx-react-devtools'
 
 @observer
 class Decorator extends Component {
@@ -18,6 +19,7 @@ class Decorator extends Component {
   render() {
     return (
       <div>
+        <DevTools />
         <h1>{this.Deco}</h1>
 
         <Button onClick={this.onIncrement} large intent='primary' icon='plus'>

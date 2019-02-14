@@ -1,8 +1,13 @@
 # LUMI
 
-- git clone
-- cd into folder
-- yarn
-- yarn start
-- ???
-- profit
+## 🤳 git clone
+
+## 📁 cd into folder
+
+## 😻 yarn
+
+## 🆕 yarn start
+
+## ⁉ ???
+
+## 💵 profit
