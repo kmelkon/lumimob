@@ -1,6 +1,20 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink, Link, Switch, Route } from 'react-router-dom'
+import Counter from './Counter'
 import '../styles/layout.scss'
+
+const routes = [
+  {
+    path: '/',
+    exact: true,
+    main: () => <h2>Home</h2>,
+  },
+  {
+    path: '/counter',
+    exact: true,
+    main: Counter,
+  },
+]
 
 const Layout = props => {
   return (
@@ -8,24 +22,32 @@ const Layout = props => {
       <div className='layout'>
         <div className='header'>
           <nav className='nav'>
-            <Link className='nav-link' to='/'>
+            <NavLink exact activeClassName='active' className='nav-link' to='/'>
               Home AKA Lumi
-            </Link>
-            <Link className='nav-link' to='/about'>
-              About
-            </Link>
-            <Link className='nav-link' to='/shows'>
-              TV Shows
-            </Link>
-            <Link className='nav-link' to='/fakerql'>
-              FakeQL
-            </Link>
-            <Link className='nav-link' to='/counter'>
+            </NavLink>
+            <NavLink
+              activeClassName='active'
+              className='nav-link'
+              to='/counter'
+            >
               Counter
-            </Link>
+            </NavLink>
           </nav>
         </div>
-        <main className='main'>{props.children}</main>
+        <main className='main'>
+          {props.children}
+          <Switch>
+            {/* using routes object to easily edit routes whenever needed */}
+            {routes.map((route, index) => (
+              <Route
+                key={index}
+                path={route.path}
+                exact={route.exact}
+                component={route.main}
+              />
+            ))}
+          </Switch>
+        </main>
         <aside className='sidebar'>
           <ul>
             <li>
