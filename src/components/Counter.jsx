@@ -1,11 +1,16 @@
 import React, { Component } from 'react'
-import { observable } from 'mobx'
+import { observable, extendObservable } from 'mobx'
 import { observer } from 'mobx-react'
 import { Button } from '@blueprintjs/core'
 
-@observer
 class Counter extends Component {
-  @observable counter = 0
+  constructor() {
+    super()
+
+    extendObservable(this, {
+      counter: 0,
+    })
+  }
 
   onIncrement = () => {
     this.counter++
@@ -18,17 +23,17 @@ class Counter extends Component {
   render() {
     return (
       <div>
-        <h1>{this.counter}</h1>
+        {this.counter}
 
-        <Button onClick={this.onIncrement} large intent='primary' icon='plus'>
+        <button onClick={this.onIncrement} type='button'>
           Increment
-        </Button>
-        <Button onClick={this.onDecrement} large intent='danger' icon='minus'>
+        </button>
+        <button onClick={this.onDecrement} type='button'>
           Decrement
-        </Button>
+        </button>
       </div>
     )
   }
 }
 
-export default Counter
+export default observer(Counter)

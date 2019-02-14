@@ -1,6 +1,8 @@
 import React from 'react'
 import { NavLink, Link, Switch, Route } from 'react-router-dom'
 import Counter from './Counter'
+import Decorator from './Decorator'
+
 import '../styles/layout.scss'
 
 const routes = [
@@ -13,6 +15,11 @@ const routes = [
     path: '/counter',
     exact: true,
     main: Counter,
+  },
+  {
+    path: '/decorator',
+    exact: true,
+    main: Decorator,
   },
 ]
 
