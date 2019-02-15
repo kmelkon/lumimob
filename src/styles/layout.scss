@@ -2,11 +2,16 @@
   grid-area: logo;
   background-color: #f0c6c6;
   padding: 1rem;
+  display: flex;
+  align-items: center;
 }
 .header {
   grid-area: header;
   background-color: #fafafa;
   padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   // grid-column: header-start/-1;
   // z-index: 9;
 }
@@ -55,4 +60,3 @@
       30px;
   }
 }
-
