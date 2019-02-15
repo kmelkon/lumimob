@@ -2,8 +2,8 @@ import React from 'react'
 import { NavLink, Link, Switch, Route } from 'react-router-dom'
 import Counter from './Counter'
 import Decorator from './Decorator'
-
 import '../styles/layout.scss'
+import NavBar from './NavBar'
 
 const routes = [
   {
@@ -20,33 +20,16 @@ const routes = [
     path: '/decorator',
     exact: true,
     main: Decorator,
-  },
+  }
 ]
 
 const Layout = props => {
   return (
     <>
       <div className='layout'>
+        <div className='logo'>STUDI</div>
         <div className='header'>
-          <nav className='nav'>
-            <NavLink exact activeClassName='active' className='nav-link' to='/'>
-              Home AKA Lumi
-            </NavLink>
-            <NavLink
-              activeClassName='active'
-              className='nav-link'
-              to='/counter'
-            >
-              Counter
-            </NavLink>
-            <NavLink
-              activeClassName='active'
-              className='nav-link'
-              to='/decorator'
-            >
-              Counter+Decorator
-            </NavLink>
-          </nav>
+          <NavBar />
         </div>
         <main className='main'>
           {props.children}

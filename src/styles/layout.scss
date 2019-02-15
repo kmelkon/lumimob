@@ -1,7 +1,14 @@
+.logo {
+  grid-area: logo;
+  background-color: #f0c6c6;
+  padding: 1rem;
+}
 .header {
   grid-area: header;
   background-color: #fafafa;
   padding: 1rem;
+  // grid-column: header-start/-1;
+  // z-index: 9;
 }
 .footer {
   grid-area: footer;
@@ -16,12 +23,13 @@
 .sidebar {
   grid-area: navigation;
   background-color: #dfdfdf;
+  // grid-row: header-start/navigation-end;
 }
 
 .layout {
   display: grid;
   grid-template-areas:
-    'header header header'
+    'logo header header'
     'navigation main main'
     'footer footer footer';
   grid-template-columns: 200px repeat(2, 1fr);
@@ -48,6 +56,3 @@
   }
 }
 
-.active {
-  color: crimson;
-}
